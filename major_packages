@@ -1,0 +1,17 @@
+# Backroung setter for i3
+feh
+
+# GUI for xrandr to setup displays
+arandr
+
+# Set up fonts and stuff for gtk
+lxappearance
+
+# terminal based file explorer
+ranger
+
+# latex compiler
+texlive
+
+# best terminal to date
+urxvt
