@@ -40,7 +40,7 @@ systemctl --user start pulseaudio.service
 echo "Pulseaudio is all setup"
 
 # [5] Install a bunch of usefull packages
-sudo pacman -S arandr lxappearance feh unzip ranger thunar ttf-dejavu noto-fonts-cjk noto-fonts-emoji noto-fonts xdotool
+sudo pacman -S arandr lxappearance feh unzip ranger thunar ttf-dejavu noto-fonts-cjk noto-fonts-emoji noto-fonts xdotool compton
 # Install some AUR packages
 yay -S google-chrome ttf-font-awesome ttf-freefont ttf-ms-fonts ttf-linux-libertine ttf-dejavu ttf-inconsolata ttf-ubuntu-font-family apulse
 echo "Bunch of useful packages installed"
