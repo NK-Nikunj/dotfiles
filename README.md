@@ -1,5 +1,11 @@
 # Guide to Arch
 
+## Installation Guide to Arch with a few dotfiles
+
+ * Install vanilla arch.
+ * Follow below instructions to install i3wm over vanilla arch
+ * run the automate.sh to get an arch setup like I have
+
 ### Installing graphical over vanila arch
 
  * Install the xorg server and nvidia drivers
