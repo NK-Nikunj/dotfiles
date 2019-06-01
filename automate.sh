@@ -10,22 +10,22 @@ echo "Touchpad Gestures should work now!!"
 
 
 # [2] Make brightness key bindings work. This is added coz xbacklit doesn't work sometimes out of the box
-git clone https://github.com/haikarainen/light.git
-cd light/
+git clone https://github.com/haikarainen/light.git ~/opt/light
+cd ~/opt/light/
 ./autogen.sh
 ./configure
 make
 sudo make install
-cd ..
+cd ~/opt/dotfiles/
 # This will add light package for controlling the brightness
 echo "Light package added, key bindings should work now"
 # The above step is necessary coz it's used in i3-config for brightness controls
 
 # [3] Install yay as AUR helper
-git clone https://aur.archlinux.org/yay.git
-cd yay/
+git clone https://aur.archlinux.org/yay.git ~/opt/yay
+cd ~/opt/yay
 makepkg -si
-cd ..
+cd ~/opt/dotfiles
 echo "yay added as AUR helper"
 # The above step is needed to install AUR packages through terminal
 
@@ -42,7 +42,7 @@ echo "Pulseaudio is all setup"
 # [5] Install a bunch of usefull packages
 sudo pacman -S arandr lxappearance feh unzip ranger thunar ttf-dejavu noto-fonts-cjk noto-fonts-emoji noto-fonts xdotool compton
 # Install some AUR packages
-yay -S google-chrome ttf-font-awesome ttf-freefont ttf-ms-fonts ttf-linux-libertine ttf-dejavu ttf-inconsolata ttf-ubuntu-font-family apulse
+yay -S google-chrome ttf-font-awesome nerd-fonts-complete ttf-material-design-icons ttf-freefont ttf-ms-fonts ttf-linux-libertine ttf-dejavu ttf-inconsolata ttf-ubuntu-font-family apulse
 echo "Bunch of useful packages installed"
 
 
@@ -55,3 +55,10 @@ git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
 ~/.bash_it/install.sh
 echo "Bash it installed. Copying bashrc now..."
 mv bashrc ~/.bashrc
+
+# Add Polybar to arch
+sudo pacman -S libmpdclient
+yay -S polybar
+cp -r polybar ~/.config/
+chmod +x ~/.config/polybar/launch.sh
+echo "Polybar added to the system"
