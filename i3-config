@@ -94,15 +94,15 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1: Chrome"
-set $ws2 "2 Terminal"
-set $ws3 "3 Code"
-set $ws4 "4"
-set $ws5 "5"
+set $ws1 "1: Chrome"
+set $ws2 "2: Terminal"
+set $ws3 "3: Code"
+set $ws4 "4: Hexchat"
+set $ws5 "5: Misc"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
-set $ws9 "9"
+set $ws9 "9: Mail"
 set $ws10 "10"
 
 # switch to workspace
@@ -221,7 +221,7 @@ assign [class="Google-chrome"] $ws1
 exec google-chrome-stable
 
 # Execute polybar
-exec_always --no-startup-id /home/nk/.config/polybar/launch.sh
+# exec_always --no-startup-id /home/nk/.config/polybar/launch.sh
 
 # border / titlebar
 new_window normal
@@ -229,7 +229,7 @@ for_window [class="^.*"] border pixel 1
 
 # i3status-rust
 bar {
-    font pango:DejaVu Sans Mono, FontAwesome 12
+    font pango:DejaVu Sans Mono, FontAwesome 9
     position bottom
     status_command /usr/bin/i3status-rs /home/nk/.config/i3/status.toml
     colors {
@@ -242,3 +242,8 @@ bar {
         urgent_workspace #2f343a #900000 #ffffff
     }
 }
+
+# Set up screenshot
+bindsym Print exec flameshot full -c -p ~/Pictures/screenshots/
+bindsym $mod+Print flameshot gui -c -p ~/Pictures/screenshots/
+

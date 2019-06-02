@@ -67,3 +67,6 @@ echo "Polybar added to the system"
 yay -S i3status-rust-git
 cp i3status-rust/status.toml ~/.config/i3/status.toml
 echo "i3status-rust added successfully"
+
+# Add Screenshot ability
+sudo pacman -S flameshot
