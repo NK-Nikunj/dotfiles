@@ -40,9 +40,9 @@ systemctl --user start pulseaudio.service
 echo "Pulseaudio is all setup"
 
 # [5] Install a bunch of usefull packages
-sudo pacman -S arandr lxappearance feh unzip ranger thunar ttf-dejavu noto-fonts-cjk noto-fonts-emoji noto-fonts xdotool compton
+sudo pacman -S arandr lxappearance feh unzip ranger thunar powerline powerline-fonts ttf-dejavu noto-fonts-cjk noto-fonts-emoji noto-fonts xdotool compton
 # Install some AUR packages
-yay -S google-chrome ttf-font-awesome nerd-fonts-complete ttf-material-design-icons ttf-freefont ttf-ms-fonts ttf-linux-libertine ttf-dejavu ttf-inconsolata ttf-ubuntu-font-family apulse
+yay -S google-chrome ttf-font-awesome-4 nerd-fonts-complete ttf-material-design-icons ttf-freefont ttf-ms-fonts ttf-linux-libertine ttf-dejavu ttf-inconsolata ttf-ubuntu-font-family apulse
 echo "Bunch of useful packages installed"
 
 
@@ -62,3 +62,8 @@ yay -S polybar
 cp -r polybar ~/.config/
 chmod +x ~/.config/polybar/launch.sh
 echo "Polybar added to the system"
+
+# Add i3status-rust
+yay -S i3status-rust-git
+cp i3status-rust/status.toml ~/.config/i3/status.toml
+echo "i3status-rust added successfully"
