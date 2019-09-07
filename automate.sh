@@ -73,3 +73,6 @@ sudo pacman -S flameshot
 
 # Add hexchat and thunderbird
 sudo pacman -S hexchat thunderbird
+
+# Add autocompletion to bash
+sudo pacman -S bash-completion
