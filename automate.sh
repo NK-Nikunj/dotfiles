@@ -70,3 +70,6 @@ echo "i3status-rust added successfully"
 
 # Add Screenshot ability
 sudo pacman -S flameshot
+
+# Add hexchat and thunderbird
+sudo pacman -S hexchat thunderbird

@@ -13,11 +13,20 @@ step_width = 3
 
 [[block]]
 block = "net"
+device = "eno1"
+ssid = true
+ip = true
+speed_up = false
+graph_up = false
+interval = 1
+
+[[block]]
+block = "net"
 device = "wlo1"
 ssid = true
 ip = true
 speed_up = false
-graph_up = true
+graph_up = false
 interval = 1
 
 [[block]]

@@ -123,3 +123,22 @@ EndSection
 ```
 
 This is all I needed to get things to work. Simply reboot the device and everything should work now.
+
+## Post Arch installation
+
+Once done with Arch installation and i3 setup. Copy the files to their respective locations.
+
+```
+automate.sh -> Run to automate a lot of installation stuff
+compton.conf -> Copy to ~/.config/
+i3-config -> Replace with ~/.config/i3/config
+bashrc -> Replace with ~/.bashrc
+pacman.txt -> Contains all the packages I have
+xresources -> Replace with ~/.Xresources
+i3status-rust/status.toml -> Replace with ~/.config/i3/status.toml (i3-status-rust configuration file)
+polybar -> Replace with ~/.config/polybar (I don't use it anymore, just keeping it anyway)
+touchpad/70-synaptics.conf -> Add the file 70-synaptics.conf to /etc/X11/xorg.conf.d/
+gtk/gtk-3.0 -> Replace the directory with ~/.config/gtk-3.0
+```
+
+Once done with replacing things, everything should look perfect!

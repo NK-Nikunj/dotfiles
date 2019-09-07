@@ -99,11 +99,18 @@ set $ws2 "2: Terminal"
 set $ws3 "3: Code"
 set $ws4 "4: Hexchat"
 set $ws5 "5: Misc"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9: Mail"
-set $ws10 "10"
+set $ws6 "6: Misc"
+set $ws7 "7: Misc"
+set $ws8 "8: Misc"
+set $ws9 "9: Misc"
+set $ws10 "10: Mail"
+
+# assign workspaces to screens
+workspace $ws1 output HDMI-0
+workspace $ws3 output HDMI-0
+workspace $ws2 output eDP-1-1
+workspace $ws4 output eDP-1-1
+workspace $ws10 output eDP-1-1
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -164,10 +171,11 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Key binding for locking i3
-bindsym $mod+shift+x exec i3lock --color "$bg-color"
+bindsym Mod1+l exec i3lock -c 000000 -i /home/nk/Pictures/lockscreen.png
+bindsym Mod1+m exec i3lock -i /home/nk/Pictures/lockscreen.png && systemctl suspend
 
 # Pulse Audio controls
-bindsym XF86AudioMute exec amixer sset 'Master' toggle
+bindsym XF86AudioMute exec `amixer sset 'Master' toggle && amixer sset 'Speaker' unmute && amixer sset 'Headphone' unmute`
 bindsym XF86AudioLowerVolume exec amixer sset 'Master' 5%-
 bindsym XF86AudioRaiseVolume exec amixer sset 'Master' 5%+
 
@@ -188,17 +196,17 @@ bindsym XF86AudioPrev exec playerctl previous
 
 
 # Add Background to i3
-exec_always feh --bg-scale /home/nk/Pictures/background.jpg
+exec_always feh --bg-scale /home/nk/Pictures/background.png
 
 # Monitor settings
-exec_always xrandr --output HDMI-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output eDP-1-1 --mode 1920x1080 --pos 1920x0 --rotate normal --output HDMI-1-2
+exec_always xrandr --output HDMI-0 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --output eDP-1-1 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-1-2 --off
 
 # Open terminal always
 assign [class="URxvt"] $ws2
 exec urxvt
 
 # Set Opacity
-exec_always compton -f
+exec_always compton --config /home/nk/.config/compton.conf
 
 # Setting up the i3 color scheme
 set $bg-color 	         #2f343f
@@ -245,5 +253,18 @@ bar {
 
 # Set up screenshot
 bindsym Print exec flameshot full -c -p ~/Pictures/screenshots/
-bindsym $mod+Print flameshot gui -c -p ~/Pictures/screenshots/
+bindsym $mod+Print exec flameshot gui -p ~/Pictures/screenshots/
 
+# Touchpad config
+set $touchpad "11"
+exec_always --no-startup-id xinput set-prop "$touchpad" "libinput Tapping Enabled" 1
+exec_alwasy --no-startup-id xinput set-prpo "$touchpad" "libinput Natural Scrolling Enabled" 1
+exec_alwasy --no-startup-id xinput set-prpo "$touchpad" "libinput Disable While Typing Enabled" 0
+
+# Attach hexchat on ws4
+assign [class="Hexchat"] $ws4
+exec hexchat
+
+# Attach thunderbird to ws10
+assign [class="Thunderbird"] $ws10
+exec thunderbird
