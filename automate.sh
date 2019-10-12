@@ -76,3 +76,14 @@ sudo pacman -S hexchat thunderbird
 
 # Add autocompletion to bash
 sudo pacman -S bash-completion
+
+# Add bluetooth services
+sudo pacman -S bluez bluez-utils blueman pulseaudio-bluetooth
+sudo systemctl start bluetooth.service
+sudo systemctl enable bluetooth.service
+
+# Add hotspot IP ability
+sudo pacman -S dnsmasq
+
+mkdir Pictures
+mkdir Pictures/screenshot

@@ -20,7 +20,7 @@ export BASH_IT="/home/nk/.bash_it"
 # Lock and Load a custom theme file.
 # Leave empty to disable theming.
 # location /.bash_it/themes/
-export BASH_IT_THEME='powerline'
+export BASH_IT_THEME='pure'
 
 # (Advanced): Change this to the name of your remote repo if you
 # cloned bash-it with a remote other than origin such as `bash-it`.
@@ -48,7 +48,7 @@ export SCM_CHECK=true
 
 # Set Xterm/screen/Tmux title with only a short username.
 # Uncomment this (or set SHORT_USER to something else),
-# Will otherwise fall back on $USER.
+# Will otherwise fall back on $USER
 #export SHORT_USER=${USER:0:8}
 
 # Set Xterm/screen/Tmux title with shortened command and directory.
@@ -70,5 +70,8 @@ export SCM_CHECK=true
 source "$BASH_IT"/bash_it.sh
 
 # Make clang default compiler
-export CC=/usr/bin/clang
-export CXX=/usr/bin/clang++
+#export CC=/usr/bin/clang
+#export CXX=/usr/bin/clang++
+
+alias shutdown="shutdown -h now"
+alias reboot="sudo reboot"

@@ -11,7 +11,7 @@
  * Install the xorg server and nvidia drivers
 
 ```
-sudo pacman -S xorg
+sudo pacman -S xorg-server xorg-apps xorg-xinit xterm
 sudo pacman -S nvidia nvidia-lts nvidia-libgl mesa
 ```
 
