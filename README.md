@@ -2,7 +2,7 @@
 
 ## Installation Guide to Arch with a few dotfiles
 
- * Install vanilla arch.
+ * Install [vanilla arch][1].
  * Follow below instructions to install i3wm over vanilla arch
  * run the automate.sh to get an arch setup like I have
 
@@ -142,3 +142,5 @@ gtk/gtk-3.0 -> Replace the directory with ~/.config/gtk-3.0
 ```
 
 Once done with replacing things, everything should look perfect!
+
+[1]: arch-linux-install
