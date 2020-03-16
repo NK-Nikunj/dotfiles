@@ -2,7 +2,7 @@
 ! Xft settings
 !-------------------------------------------------------------------------------
 
-Xft.dpi:                    100
+Xft.dpi:                    155
 Xft.antialias:              true
 Xft.rgba:                   rgb
 Xft.hinting:                true
@@ -13,7 +13,7 @@ Xft.hintstyle:              hintfull
 !-------------
 
 ! Mouse wheel
-URxvt.secondaryScreen: 1
+URxvt.secondaryScreen: 2
 URxvt.secondaryScroll: 0
 URxvt.secondaryWheel: 1
 
@@ -31,7 +31,7 @@ URxvt.keysym.Control-Right:  \033[1;5C
 !URxvt.keysym.C-slash:  font-size:show
 
 ! Font
-URxvt.font: xft:Source Code Pro:size=10
+URxvt.font: xft:Source Code Pro:size=11
 
 ! Clickable URLs
 URxvt.perl-ext-common: default,matcher

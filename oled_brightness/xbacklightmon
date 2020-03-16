@@ -1,0 +1,24 @@
+#!/bin/sh
+
+path=/sys/class/backlight/intel_backlight
+
+read -r level < ~/.current_brightness
+read -r max < "$path"/max_brightness
+LEVEL=100
+INC="-i"
+DEC="-d"
+
+if [ "$1" = "$INC" ]
+then
+    LEVEL=`bc<<<$level+$level*$2/100`
+    if [ $LEVEL -gt $max ]
+    then
+        LEVEL=$max
+    fi
+else
+    LEVEL=`bc<<<$level-$level*$2/100`
+fi
+
+PLEVEL=`bc<<<"scale=10;$LEVEL/$max"`
+xrandr --output eDP-1-1 --brightness "$PLEVEL"
+echo "$LEVEL" > ~/.current_brightness
