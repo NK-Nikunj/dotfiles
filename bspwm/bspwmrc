@@ -1,0 +1,27 @@
+#! /bin/sh
+
+sxhkd &
+picom &
+
+rm -r $HOME/.cache/wal/*
+$HOME/.local/bin/wal -i Pictures/back.jpg &
+$HOME/.config/polybar/launch.sh &
+ 
+bspc monitor -d I II III IV V VI VII VIII IX X
+
+bspc config border_width         0
+bspc config window_gap          12
+bspc config single_monocle true
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc rule -a Firefox desktop='^1' follow=on
+bspc rule -a element-desktop desktop='^5' 
+bspc rule -a Spotify desktop='^10' 
+bspc rule -a discord desktop='^9'
+
+discord &
+element-desktop &
+firefox &
